@@ -36,7 +36,7 @@
     
     <div class="container">
         <div class="center-text">
-            <a href="#" target="_blank" style="text-decoration: none; color: #ff69b4;">Và đây là nhóm:Hóa chỉ là cái tên</a>
+            <a href="#" target="_blank" style="text-decoration: none; color: #ff69b4;">Và đây là nhóm: Hóa chỉ là cái tên</a>
         </div>
         <div class="circle">
             <img src="./asset/img/anh-chibi-cute-4.jpg" alt="Image 1" class="circle-img">
@@ -54,16 +54,33 @@
     </audio>
 
     <script>
-        // Đợi 1 giây sau khi trang được tải, sau đó phát nhạc
-        window.onload = function() {
-            setTimeout(function() {
-                const audio = document.getElementById('myAudio');
-                audio.play().catch(error => {
-                    console.error('Không thể phát audio:', error);
-                });
-            }, 1000);  // 1000ms = 1 giây
-        };
+        // Khởi tạo AudioContext
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Tạo hàm phát âm thanh
+        function playAudio() {
+            const audio = document.getElementById('myAudio');
+            audio.play().catch((error) => {
+                console.error('Không thể phát audio:', error);
+            });
+        }
+
+        // Tương tác với người dùng
+        document.addEventListener('click', function() {
+            context.resume().then(() => {
+                console.log('Playback resumed successfully');
+                // Phát âm thanh ngay sau khi có tương tác
+                playAudio();
+            });
+        });
+
+        // Tự động phát sau 1 giây nếu đã tương tác
+        setTimeout(() => {
+            if (context.state === 'running') {
+                playAudio();
+            }
+        }, 1000);
     </script>
-    
+
 </body>
 </html>
