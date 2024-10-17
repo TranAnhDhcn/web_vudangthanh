@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff; 
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    flex-direction: column;
+}
+
+.center-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    z-index: 2;
+    animation: slide 10s linear infinite; 
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+}
+
+.circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative; 
+    animation: rotate 12s infinite linear;
+}
+
+.circle-img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    transform-origin: 50% 220px; 
+}
+
+
+.circle-img:nth-child(1) {
+    top: 43%;
+    left: 43%;
+    transform: rotate(0deg) translateX(220px) rotate(0deg); 
+}
+.circle-img:nth-child(2) {
+    top: 43%;
+    left: 43%;
+    transform: rotate(60deg) translateX(220px) rotate(-60deg);
+}
+
+.circle-img:nth-child(3) {
+    top: 43%;
+    left: 43%;
+    transform: rotate(120deg) translateX(220px) rotate(-120deg);
+}
+
+.circle-img:nth-child(4) {
+    top: 43%;
+    left: 43%;
+    transform: rotate(180deg) translateX(220px) rotate(-180deg);
+}
+
+.circle-img:nth-child(5) {
+    top: 43%;
+    left: 43%;
+    transform: rotate(240deg) translateX(220px) rotate(-240deg);
+}
+
+.circle-img:nth-child(6) {
+    top: 43%;
+    left: 43%;
+    transform: rotate(300deg) translateX(220px) rotate(-300deg);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    bottom: 10%; 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    animation: slide 20s linear infinite; 
+}
+
+.footer--wrap {
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #000000; 
+    background-color: #4682B4;
+    transition: transform 0.3s;
+}
+
+.footer--wrap:hover {
+    transform: scale(1.1);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

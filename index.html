@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hóa ư? Chỉ là cái tên</title>
+    <link rel="stylesheet" href="./asset/css/Untitled-1.css"> 
+</head>
+<body>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer--wrap" style="background-color: #FF6347;">
+                <span>Trưởng nhóm + Ppt + Thuyết trình: Hải Hà</span>
+            </div>
+            <div class="footer--wrap" style="background-color: #4682B4;">
+                <span>Ppt + Intro + Minigame + Thuyết trình: Mr:Thanh Vũ</span>
+            </div>
+            <div class="footer--wrap" style="background-color: #32CD32;">
+                <span>Đưa ra câu hỏi + trả lời mọi câu hỏi: Kim Anh</span>
+            </div>
+            <div class="footer--wrap" style="background-color: #FFD700;">
+                <span>1 nhỏ: Khánh Hà + Kim Anh + Bảo Ngọc</span>
+            </div>
+            <div class="footer--wrap" style="background-color: #FF4500;">
+                <span>2 nhỏ: Minh Phúc + Tài Quốc</span>
+            </div>
+            <div class="footer--wrap" style="background-color: #8A2BE2;">
+                <span>3 nhỏ: Phi Hùng + Hải Đăng + Trọng Hiếu</span>
+            </div>
+            <div class="footer--wrap" style="background-color: #4682B4;">
+                <span>Câu hỏi phụ: Anh Minh + Đăng Quang</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="center-text">
+            <a href="#" target="_blank" style="text-decoration: none; color: #ff69b4;">Và đây là nhóm:Hóa chỉ là cái tên</a>
+        </div>
+        <div class="circle">
+            <img src="./asset/img/anh-chibi-cute-4.jpg" alt="Image 1" class="circle-img">
+            <img src="./asset/img/anh-ve-be-meo-be-gau-cute-don-gian.jpg" alt="Image 52" class="circle-img">
+            <img src="./asset/img/OIP (1).jpg" alt="Image 3" class="circle-img">
+            <img src="./asset/img/OIP (2).jpg" alt="Image 4" class="circle-img">
+            <img src="./asset/img/OIP (3).jpg" alt="Image 5" class="circle-img">
+            <img src="./asset/img/OIP (6).jpg" alt="Image 6" class="circle-img">
+        </div>
+    </div>
+
+    <audio id="myAudio" preload="auto">
+        <source src="./asset/mp3/y2mate.com - You And You Only Remix  ThahTrung Remix  Nhạc Hot TikTok Remix Mới Nhất 2024.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F5') {
+                event.preventDefault();
+                var audio = document.getElementById('myAudio');
+                audio.play(); 
+                audio.onended = function() {
+                    window.location.href = './asset/ppt/Hóa.pptx'; 
+                };
+            }
+        });
+    </script>
+</body>
+</html>
