@@ -48,19 +48,22 @@
         </div>
     </div>
 
-    <audio id="myAudio" preload="auto">
-        <source src="./asset/mp3/y2mate.com - You And You Only Remix  ThahTrung Remix  Nhạc Hot TikTok Remix Mới Nhất 2024.mp3" type="audio/mpeg">
+    <audio id="myAudio" preload="auto" loop>
+        <source src="./asset/mp3/music.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ thẻ audio.
     </audio>
 
     <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'F5') {
-                event.preventDefault();
-                var audio = document.getElementById('myAudio');
-                audio.play(); 
-            }
-        });
+        // Đợi 1 giây sau khi trang được tải, sau đó phát nhạc
+        window.onload = function() {
+            setTimeout(function() {
+                const audio = document.getElementById('myAudio');
+                audio.play().catch(error => {
+                    console.error('Không thể phát audio:', error);
+                });
+            }, 1000);  // 1000ms = 1 giây
+        };
     </script>
+    
 </body>
 </html>
